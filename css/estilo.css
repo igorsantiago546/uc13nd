@@ -2,7 +2,7 @@
 /* CSS Dcument */
 
 .fundofixo{
-    background: url('../images/churrascaria.webp') no-repeat fixed;
+    background: url('../images/fundo.png') no-repeat fixed;
     -webkit-background-size: cover;
     background-size: cover;
 }

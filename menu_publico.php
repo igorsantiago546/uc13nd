@@ -30,7 +30,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                     <span class="icon-bar"></span>
                 </button>
                 <a href="index.php" class="navbar navbar-brand">
-                    <img src="" alt="Logotipo Chuleta Quente">
+                    <img src="images/logo3.png" alt="Logotipo Chuleta Quente">
                 </a>
              </div> 
              <!-- fecha Agrupamento mobile -->
