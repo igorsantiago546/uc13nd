@@ -1,0 +1,12 @@
+@charset "utf8";
+/* CSS Dcument */
+
+.fundofixo{
+    background: url('../images/churrascaria.webp') no-repeat fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.fundo-rodape{
+    background-color: rgba(255, 255, 255, 0.8);
+}

@@ -9,7 +9,7 @@
     <!-- link para CSS bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- link para css personalizado/próprio -->
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body class="fundofixo">
