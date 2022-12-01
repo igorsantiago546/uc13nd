@@ -86,4 +86,3 @@ $rows_tipos = $lista_tipos->fetch_all();
 </body>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </html>
-<h1>Meu menu</h1>
