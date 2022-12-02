@@ -44,7 +44,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                     </li>
                     <li><a href="index.php#destaques">DESTAQUES</a>
                     </li>
-                    <li><a href="produtos_geral.php?">PRODUTOS</a></li>
+                    <li><a href="index.php#produtos">PRODUTOS</a></li>
                     <!-- dropdown -->
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

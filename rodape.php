@@ -11,7 +11,11 @@
 </head>
 
 <body class="fundofixo">
+    <h2 class="breadcrumb alert-danger">
+            Contatos
+        </h2>
     <div class="row panel-footer fundo-rodape">
+    
         <!-- Area de localização -->
         <div class="col-sm-6 col-md-4">
             <div class="painel-footer" style="background: none;">
