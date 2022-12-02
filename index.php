@@ -21,9 +21,10 @@
         <?php include 'carousel.php'; ?>
         <!-- Area de destaques -->
         <a name="destaques">&nbsp;</a>
-        <?php include 'produtos_destaque.php'; ?>
+        <?php //include 'produtos_destaque.php'; ?>
         <!-- Àrea dos produtos em geral -->
-        <?php include 'produtos_geral.php'; ?>
+        <a name="prods_geral">&nbsp;</a>
+        <?php //include 'produtos_geral.php'; ?>
 
         <!-- Rodapé -->
         <footer class="panel-footer" style="background: none;">
