@@ -25,4 +25,6 @@ if(!isset($_SESSION['login_usuario'])) {
     session_destroy();
     header('location: login.php');
 }
+
+
 ?>
