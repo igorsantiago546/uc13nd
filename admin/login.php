@@ -1,12 +1,13 @@
 <?php
 include "../conn/connect.php";
-// inicia a verificação do login
+// incia a verificação do login
 if($_POST){
     $login = $_POST['login_usuario'];
     $senha = $_POST['senha_usuario'];
-    $loginRes = $conn->query("select * from tbusuarios where login_usuario = '$login' and senha_usuario = '$senha'");
+    // echo $login . " -" .$senha;
+    $loginRes = $conn->query("select * from tbusuarios where login_usuario ='$login' and  senha_usuario = md5('$senha')");
     $rowLogin = $loginRes->fetch_assoc();
-    // $numRow = $loginRes->num_rows
+    // $numRow = $loginRes->num_rows;
     $numRow = mysqli_num_rows($loginRes);
 
     // se a sessão não existir
@@ -15,14 +16,20 @@ if($_POST){
         session_start();
         $session_name_new = session_name();
     }
-    if ($numRow > 0){
+    if($numRow > 0){
         $_SESSION['login_usuario'] = $login;
         $_SESSION['nivel_usuario'] = $rowLogin['nivel_usuario'];
         $_SESSION['nome_da_sessao'] = session_name();
+        if($rowLogin['nivel_usuario']=='sup'){
+            echo "<script>window.open('index.php','_self')</script>";
+        }elseif ($rowLogin['nivel_usuario']=='com') {
+            echo "<script>window.open('../client/index.php','_self')</script>";
+        }
+    }else{
+        echo "<script>window.open('invasor.php','_self')</script>";
     }
 
-
-}
+}   
 ?>
 
 <!DOCTYPE html>
@@ -36,11 +43,11 @@ if($_POST){
     <script src="https://kit.fontawesome.com/2495680ceb.js" crossorigin="anonymous"></script>
     <!-- Link para CSS específico -->
     <link rel="stylesheet" href="../css/meu_estilo.css" type="text/css">
-    <title>Login</title>
+    
+    <title>Chuleta Quente - Login</title>
 </head>
 
 <body>
-
     <main class="container">
         <section>
             <article>

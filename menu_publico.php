@@ -76,7 +76,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                     <!-- final formulário de busca -->
                     <li class="active">
                         <a href="admin/index.php">
-                            <span class="glyphicon glyphicon-user">&nbsp;ADMIN</span>
+                            <span class="glyphicon glyphicon-user">&nbsp;LOGIN</span>
                         </a>
                     </li>
                 </ul>
