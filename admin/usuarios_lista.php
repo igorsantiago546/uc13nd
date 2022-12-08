@@ -40,11 +40,11 @@ $num_linhas = $lista_user->num_rows;
                         <td class="hidden"><?php echo $linha['senha_usuario']?></td>
                         <td><?php echo $linha['nivel_usuario']?></td>
                         <td>
-                                <a href="produtos_atualiza.php?id_priduto=<?php echo $row['id_produto']; ?>" class="btn btn-warning btn-block btn-xs">
+                                <a href="produtos_atualiza.php?id_priduto=<?php echo $linha['id_usuario']; ?>" class="btn btn-warning btn-block btn-xs">
                                     <span class="hidden-xs">ALTERAR</span>
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </a>
-                                <button data-nome="<?php echo $row['descri_produto']?>" data-id="<?php echo $row['id_produto']; ?>" class="delete btn btn-xs btn-block btn-danger">
+                                <button data-nome="<?php echo $linha['senha_usuario']?>" data-id="<?php echo $linha['nivel_usuario']; ?>" class="delete btn btn-xs btn-block btn-danger">
                                     <span class="hidden-xs">EXCLUIR</span>
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </button>
