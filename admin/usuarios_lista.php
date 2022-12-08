@@ -22,7 +22,7 @@ $num_linhas = $lista_user->num_rows;
             <thead>
                 <th class="hidden">ID</th>
                 <th>NOME</th>
-                <th>SENHAS</th>
+                <th class="hidden">SENHAS</th>
                 <th>NIVEL</th>
                 <th>
                     <a href="produtos_insere.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
@@ -37,10 +37,10 @@ $num_linhas = $lista_user->num_rows;
                     <tr>
                         <td class="hidden"><?php echo $linha['id_usuario']?></td>
                         <td><?php echo $linha['login_usuario']?></td>
-                        <td><?php echo $linha['senha_usuario']?></td>
+                        <td class="hidden"><?php echo $linha['senha_usuario']?></td>
                         <td><?php echo $linha['nivel_usuario']?></td>
                         <td>
-                                <a href="produtos_atualiza.php?id_priduto=<?php echo base64_encode($row['id_produto']); ?>" class="btn btn-warning btn-block btn-xs">
+                                <a href="produtos_atualiza.php?id_priduto=<?php echo $row['id_produto']; ?>" class="btn btn-warning btn-block btn-xs">
                                     <span class="hidden-xs">ALTERAR</span>
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </a>

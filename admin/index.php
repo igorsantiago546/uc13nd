@@ -7,6 +7,7 @@ include 'acesso_com.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área Administrativa - <?php echo($_SESSION['login_usuario']);?></title>
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
     <?php include 'menu_adm.php'?>

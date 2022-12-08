@@ -14,7 +14,7 @@ $nrows = $lista->num_rows;
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
-<body class="fundofixo">
+<body class="fundofixo"> 
     <?php include "menu_adm.php"; ?>
     <main class="container">
         <h2 class="breadcrumb alert-danger" >Lista de Produtos </h2>
@@ -32,54 +32,55 @@ $nrows = $lista->num_rows;
                         <span class="hidden-xs">ADICIONAR</span>
                     </a>
                 </th>
-                <th></th>
             </thead>
-            <!-- início corpo da tabela -->
-            <tbody>
-            <?php do{?><!-- início estrutura de repitição -->
+            
+            <tbody> <!-- início corpo da tabela -->
+            <?php do {?><!-- início estrutura repetição -->
                     <tr>
-                        <td class="hidden"><?php echo $row['id_produto']?></td>
+                        <td class="hidden"><?php echo $row['id_produto']; ?></td>
                         <td>
                             <span class="visible-xs"><?php echo $row['sigla_tipo']?></span>
                             <span class="hidden-xs"><?php echo $row['rotulo_tipo']?></span>
                         </td>
                         <td>
-                        
                             <?php 
-                                if ($row['destaque_produto']=='Sim') {
+                                if ($row['destaque_produto']=='Sim') { 
                                     echo '<span class="glyphicon glyphicon-heart text-danger" aria-hidden="true"></span>';
                                 }else{
                                     echo '<span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>';
                                 }
-                            ?>
-                            <?php echo $row['descri_produto']?>
-                            <td>
-                                <?php echo $row['resumo_produto']?>
-                            </td>
-                            <td>
-                                <?php echo number_format($row['valor_produto'],2,',','.') ;?>
-                            </td>
-                            <td>
-                                <img src="../images/<?php echo $row['imagem_produto']?>" alt="<?php echo $row['descri_produto']?>" width="100px">
-                            </td>
-                            <td>
-                                <a href="produtos_atualiza.php?id_priduto=<?php echo base64_encode($row['id_produto']); ?>" class="btn btn-warning btn-block btn-xs">
-                                    <span class="hidden-xs">ALTERAR</span>
-                                    <span class="glyphicon glyphicon-refresh"></span>
-                                </a>
-                                <button data-nome="<?php echo $row['descri_produto']?>" data-id="<?php echo $row['id_produto']; ?>" class="delete btn btn-xs btn-block btn-danger">
-                                    <span class="hidden-xs">EXCLUIR</span>
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </button>
-                            </td>
+                            ?> 
+                            <?php echo $row['descri_produto']?>    
+                        </td>
+                        <td>
+                            <?php echo $row['resumo_produto'];?>
+                        </td>
+                        <td>
+                            <?php echo number_format($row['valor_produto'],2,',','.') ;?>
+                        </td>
+                        <td>
+                            <img src="../images/<?php echo $row['imagem_produto']; ?>" alt="<?php echo $row['descri_produto']?>" width="100px">
+                        </td>
+                        <td >
+                            <a href="produtos_atualiza.php?id_produto=<?php echo $row['id_produto']; ?>" role="button" class="btn btn-warning btn-block btn-xs"> 
+                                <span class="hidden-xs">ALTERAR</span>
+                                <span class="glyphicon glyphicon-refresh"></span>
+                            </a>
+                            <button 
+                                data-nome="<?php echo $row['descri_produto']?>" 
+                                data-id="<?php echo $row['id_produto']; ?>"
+                                class="delete btn btn-xs btn-block btn-danger"
+                                >
+                                <span class="hidden-xs">EXCLUIR</span>
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
                         </td>
                     </tr>
-                <?php } while($row = $lista->fetch_assoc());?><!-- final estrutura de repitição -->
-            </tbody>
-            <!-- final corpo da tabela -->
+                <?php } while($row = $lista->fetch_assoc());?><!-- final estrutura de repetição -->
+            </tbody><!-- final corpo da tabela -->
         </table>
     </main>
-    <!-- inicio do modal para excluir -->
+    <!-- inicio do modal para excluir... -->
     <div class="modal fade" id="modalEdit" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -93,7 +94,7 @@ $nrows = $lista->num_rows;
                     <h4><span class="nome text-danger"></span></h4>
                 </div>
                 <div class="modal-footer">
-                    <a href="" type="button" class="btn btn-danger delete-yes">
+                    <a href="#" type="button" class="btn btn-danger delete-yes">
                         Confirmar
                     </a>
                     <button class="btn btn-success" data-dismiss="modal">
@@ -103,19 +104,18 @@ $nrows = $lista->num_rows;
             </div>
         </div>
     </div>
-    <!-- fim do modal -->
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $('.delete').on('click',function(){
-        var nome = $(this).data('nome');// busca o nome com a descrição (data-nome)
-        var id = $(this).data('id'); //busca o id (data-id)
-        // console.log(id + '- ' + nome); mostra a função sendo executada no console
-        $('span.nome').text(nome);//insere o nome do item na confirmação
+        var nome = $(this).data('nome'); //busca o nome com a descrição (data-nome)
+        var id = $(this).data('id'); // busca o id (data-id)
+        //console.log(id + ' - ' + nome); //exibe no console
+        $('span.nome').text(nome); // insere o nome do item na confirmação
         $('a.delete-yes').attr('href','produtos_excluir.php?id_produto='+id); //chama o arquivo php para excluir o produto
-        $('#modalEdit').modal('show');//chamar o modal
-
+        $('#modalEdit').modal('show'); // chamar o modal
     });
 </script>
+
 </html>

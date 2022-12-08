@@ -19,7 +19,7 @@ $numlinhas = $lista_tipos->num_rows;
     <?php include "menu_adm.php"?>
         <main class="container">
             <h2 class="breadcrumb alert-danger">Tipos de Produtos</h2>
-            <table class="able table-hover table-condensed tb-opacidade">
+            <table class="table table-hover table-condensed tb-opacidade">
                 <thead>
                     <th class="hidden">ID</th>
                     <th>SIGLA</th>
@@ -40,11 +40,11 @@ $numlinhas = $lista_tipos->num_rows;
                         <td><?php echo $linha['sigla_tipo']?></td>
                         <td><?php echo $linha['rotulo_tipo']?></td>
                             <td>
-                                <a href="produtos_atualiza.php?id_priduto=<?php echo base64_encode($row['id_produto']); ?>" class="btn btn-warning btn-block btn-xs">
+                                <a href="produtos_atualiza.php?id_priduto=<?php echo $linha['id_tipo']; ?>" class="btn btn-warning btn-block btn-xs">
                                     <span class="hidden-xs">ALTERAR</span>
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </a>
-                                <button data-nome="<?php echo $row['descri_produto']?>" data-id="<?php echo $row['id_produto']; ?>" class="delete btn btn-xs btn-block btn-danger">
+                                <button data-nome="<?php echo $linha['descri_produto']?>" data-id="<?php echo $linha['id_produto']; ?>" class="delete btn btn-xs btn-block btn-danger">
                                     <span class="hidden-xs">EXCLUIR</span>
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </button>
