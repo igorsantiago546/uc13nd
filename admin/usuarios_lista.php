@@ -1,45 +1,45 @@
 <?php 
-include "../conn/connect.php";
 include "acesso_com.php";
-$lista_tipos = $conn->query("select * from tbtipos");
-$linha = $lista_tipos->fetch_assoc();
-$numlinhas = $lista_tipos->num_rows;
-//print_r($linha)
+include "../conn/connect.php";
+$lista_user = $conn->query("select * from tbusuarios");
+$linha = $lista_user->fetch_assoc();
+$num_linhas = $lista_user->num_rows;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos de produtos</title>
+    <title>Lista de Usuários</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body class="fundofixo">
     <?php include "menu_adm.php"?>
-        <main class="container">
-            <h2 class="breadcrumb alert-danger">Tipos de Produtos</h2>
-            <table class="able table-hover table-condensed tb-opacidade">
-                <thead>
-                    <th class="hidden">ID</th>
-                    <th>SIGLA</th>
-                    <th>ROTULO</th>
-                    <th>
+    <main class="container">
+    <h2 class="breadcrumb alert-danger" >Lista de Usuários </h2>
+        <table class="table table-hover table-condensed tb-opacidade">
+            <thead>
+                <th class="hidden">ID</th>
+                <th>NOME</th>
+                <th>SENHAS</th>
+                <th>NIVEL</th>
+                <th>
                     <a href="produtos_insere.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                         <span class="hidden-xs">ADICIONAR</span>
                     </a>
                 </th>
                 <th></th>
-                </thead>
-                <!-- início corpo da tabela -->
-                <tbody>
-                    <?php do{?>
-                        <tr>
-                        <td class="hidden"><?php echo $linha['id_tipo']?></td>
-                        <td><?php echo $linha['sigla_tipo']?></td>
-                        <td><?php echo $linha['rotulo_tipo']?></td>
-                            <td>
+            </thead>  
+            <tbody>
+                <?php do{?>
+                    <tr>
+                        <td class="hidden"><?php echo $linha['id_usuario']?></td>
+                        <td><?php echo $linha['login_usuario']?></td>
+                        <td><?php echo $linha['senha_usuario']?></td>
+                        <td><?php echo $linha['nivel_usuario']?></td>
+                        <td>
                                 <a href="produtos_atualiza.php?id_priduto=<?php echo base64_encode($row['id_produto']); ?>" class="btn btn-warning btn-block btn-xs">
                                     <span class="hidden-xs">ALTERAR</span>
                                     <span class="glyphicon glyphicon-refresh"></span>
@@ -50,12 +50,10 @@ $numlinhas = $lista_tipos->num_rows;
                                 </button>
                             </td>
                     </tr>
-                    <?php } while($linha = $lista_tipos->fetch_assoc());?><!-- final estrutura de repitição -->
-                </tbody>
-                <!-- final corpo da tabela -->
-            </table>
-        </main>  
-        <!-- inicio do modal para excluir -->
+                <?php }while($linha = $lista_user->fetch_assoc());?>
+            </tbody>      
+        </table>
+    </main>
     <div class="modal fade" id="modalEdit" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -79,7 +77,6 @@ $numlinhas = $lista_tipos->num_rows;
             </div>
         </div>
     </div>
-    <!-- fim do modal -->     
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
