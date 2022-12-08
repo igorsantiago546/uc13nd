@@ -16,7 +16,7 @@ print_r($linha)
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body class="fundofixo">
-    main
+    <main></main>       
     
 </body>
 </html>
