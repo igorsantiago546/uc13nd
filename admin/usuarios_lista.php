@@ -38,9 +38,18 @@ $num_linhas = $lista_user->num_rows;
                         <td class="hidden"><?php echo $linha['id_usuario']?></td>
                         <td><?php echo $linha['login_usuario']?></td>
                         <td class="hidden"><?php echo $linha['senha_usuario']?></td>
-                        <td><?php echo $linha['nivel_usuario']?></td>
                         <td>
-                                <a href="produtos_atualiza.php?id_priduto=<?php echo $linha['id_usuario']; ?>" class="btn btn-warning btn-block btn-xs">
+                            <?php 
+                            if ($linha['nivel_usuario']=='sup') {
+                                echo '<span class="glyphicon glyphicon-wrench text-info" aria-hidden="true"></span>';
+                            }else{
+                                echo '<span class="glyphicon glyphicon-user text-dark" aria-hidden="true"></span>';
+                            }
+                            ?>
+                            <?php echo $linha['nivel_usuario']?>
+                        </td>
+                        <td>
+                                <a href="produtos_atualiza.php?id_produto=<?php echo $linha['id_usuario']; ?>" class="btn btn-warning btn-block btn-xs">
                                     <span class="hidden-xs">ALTERAR</span>
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </a>

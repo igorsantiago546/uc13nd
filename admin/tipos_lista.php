@@ -25,7 +25,7 @@ $numlinhas = $lista_tipos->num_rows;
                     <th>SIGLA</th>
                     <th>ROTULO</th>
                     <th>
-                    <a href="produtos_insere.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
+                    <a href="tipos_insere.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                         <span class="hidden-xs">ADICIONAR</span>
                     </a>
@@ -40,7 +40,7 @@ $numlinhas = $lista_tipos->num_rows;
                         <td><?php echo $linha['sigla_tipo']?></td>
                         <td><?php echo $linha['rotulo_tipo']?></td>
                             <td>
-                                <a href="produtos_atualiza.php?id_priduto=<?php echo $linha['id_tipo']; ?>" class="btn btn-warning btn-block btn-xs">
+                                <a href="tipos_atualiza.php?id_tipo=<?php echo $linha['id_tipo']; ?>" class="btn btn-warning btn-block btn-xs">
                                     <span class="hidden-xs">ALTERAR</span>
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </a>
@@ -89,7 +89,7 @@ $numlinhas = $lista_tipos->num_rows;
         var id = $(this).data('id'); //busca o id (data-id)
         // console.log(id + '- ' + nome); mostra a função sendo executada no console
         $('span.nome').text(nome);//insere o nome do item na confirmação
-        $('a.delete-yes').attr('href','produtos_excluir.php?id_produto='+id); //chama o arquivo php para excluir o produto
+        $('a.delete-yes').attr('href','tipos_excluir.php?id_tipo='+id); //chama o arquivo php para excluir o produto
         $('#modalEdit').modal('show');//chamar o modal
 
     });
