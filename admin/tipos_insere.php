@@ -67,28 +67,13 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                 <div class="alert alert-danger" role="alert">
                     <form action="tipos_insere.php" id="form_tipos_insere" name="form_tipos_insere" method="post" enctype="multipart/form-data">
                         <!-- Select id_tipo -->
-                        <label for="id_tipo">Tipo:</label>
+                        <label for="sigla_tipo">Sigla:</label>
                         <div class="input-group">
                             <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
                             </span>
-                            <!-- select>option*2 -->
-                            <select name="id_tipo" id="id_tipo" class="form-control" required>
-                                <!-- Abre estrutura de repetição -->
-                                <?php do { ?>
-                                <option value="<?php echo $row_fk['id_tipo']; ?>">
-                                    <?php echo $row_fk['sigla_tipo']; ?>
-                                </option>
-                                <?php } while($row_fk = $lista_fk->fetch_assoc()); 
-                                $rows_fk = mysqli_num_rows($lista_fk);
-                                if($rows_fk > 0){
-                                    mysqli_data_seek($lista_fk,0);
-                                    $rows_fk = $lista_fk->fetch_assoc();
-                                };
-                                ?>
-                                <!-- Fecha estrutura de repetição -->
-                            </select>
-                        </div><!-- fecha input-group -->
+                            <input type="text" name="sigla_tipo" id="sigla_tipo" class="form-control" placeholder="Digite a sigla ." maxlength="3" required>
+                        </div>
                         <br>
                         <!-- Fecha Select id_tipo -->
 
@@ -97,7 +82,7 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                         <label for="rotulo_tipo">Rotulo:</label>
                         <div class="input-group">
                             <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
                             </span>
                             <input type="text" name="rotulo_tipo" id="rotulo_tipo" class="form-control" placeholder="Digite o rotulo do produto." maxlength="100" required>
                         </div><!-- fecha input-group -->

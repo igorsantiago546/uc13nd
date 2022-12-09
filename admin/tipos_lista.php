@@ -44,7 +44,7 @@ $numlinhas = $lista_tipos->num_rows;
                                     <span class="hidden-xs">ALTERAR</span>
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </a>
-                                <button data-nome="<?php echo $linha['sigla_tipo']?>" data-id="<?php echo $linha['rotulo_tipo']; ?>" class="delete btn btn-xs btn-block btn-danger">
+                                <button data-nome="<?php echo $linha['sigla_tipo']?>" data-id="<?php echo $linha['id_tipo']; ?>" class="delete btn btn-xs btn-block btn-danger">
                                     <span class="hidden-xs">EXCLUIR</span>
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </button>
@@ -69,7 +69,7 @@ $numlinhas = $lista_tipos->num_rows;
                     <h4><span class="nome text-danger"></span></h4>
                 </div>
                 <div class="modal-footer">
-                    <a href="" type="button" class="btn btn-danger delete-yes">
+                    <a href="#" type="button" class="btn btn-danger delete-yes">
                         Confirmar
                     </a>
                     <button class="btn btn-success" data-dismiss="modal">

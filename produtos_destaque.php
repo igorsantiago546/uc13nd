@@ -14,7 +14,8 @@ $num_linhas = $lista->num_rows;
     <title>Produtos Destaques</title>
 </head>
 <body>
-    <h2 class="breadcrumb alert-danger"><strong>Destaques</strong></h2>
+    <?php if ($num_linhas) { ?>
+        <h2 class="breadcrumb alert-danger"><strong>Destaques</strong></h2>
     <div class="row">
         <?php do {?> <!-- início da estrutura de repetição-->
             <div class="col-sm-6 col-md-4">
@@ -48,6 +49,8 @@ $num_linhas = $lista->num_rows;
                 </div><!-- Abre thumbnail/card  -->
         <?php }while($row_destaque = $lista->fetch_assoc());?> <!-- final da estrutura de repetição-->
     </div>
+   <?php  } ?>
+    
 </body>
 </html>
 </body>
