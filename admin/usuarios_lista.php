@@ -25,7 +25,7 @@ $num_linhas = $lista_user->num_rows;
                 <th class="hidden">SENHAS</th>
                 <th>NIVEL</th>
                 <th>
-                    <a href="produtos_insere.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
+                    <a href="usuarios_insere.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                         <span class="hidden-xs">ADICIONAR</span>
                     </a>
@@ -49,11 +49,11 @@ $num_linhas = $lista_user->num_rows;
                             <?php echo $linha['nivel_usuario']?>
                         </td>
                         <td>
-                                <a href="produtos_atualiza.php?id_produto=<?php echo $linha['id_usuario']; ?>" class="btn btn-warning btn-block btn-xs">
+                                <a href="usuarios_atualiza.php?id_usuario=<?php echo $linha['id_usuario']; ?>" class="btn btn-warning btn-block btn-xs">
                                     <span class="hidden-xs">ALTERAR</span>
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </a>
-                                <button data-nome="<?php echo $linha['senha_usuario']?>" data-id="<?php echo $linha['nivel_usuario']; ?>" class="delete btn btn-xs btn-block btn-danger">
+                                <button data-nome="<?php echo $linha['senha_usuario']?>" data-id="<?php echo $linha['id_usuario']; ?>" class="delete btn btn-xs btn-block btn-danger">
                                     <span class="hidden-xs">EXCLUIR</span>
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </button>
@@ -95,7 +95,7 @@ $num_linhas = $lista_user->num_rows;
         var id = $(this).data('id'); //busca o id (data-id)
         // console.log(id + '- ' + nome); mostra a função sendo executada no console
         $('span.nome').text(nome);//insere o nome do item na confirmação
-        $('a.delete-yes').attr('href','produtos_excluir.php?id_produto='+id); //chama o arquivo php para excluir o produto
+        $('a.delete-yes').attr('href','usuarios_excluir.php?id_usuario='+id); //chama o arquivo php para excluir o produto
         $('#modalEdit').modal('show');//chamar o modal
 
     });
